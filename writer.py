@@ -4,9 +4,10 @@ import deepnovo_config
 import logging
 import math
 import numpy as np
+import os
 logger = logging.getLogger(__name__)
 from deepnovo_config import args
-spectrum_name = args.spectrum.split(".")[0]
+spectrum_name = os.path.splitext(os.path.basename(args.spectrum))[0]
 @dataclass
 class BeamSearchedSequence:
     sequence: list  # list of aa id
